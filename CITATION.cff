@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Which uncertainty should decide when to ask the expert? Deferral under distribution shift (BloodMNIST)"
+authors:
+  - family-names: Tavasoli
+    given-names: Maryam
+    orcid: "https://orcid.org/0009-0006-3535-4724"
+repository-code: "https://github.com/maryamtavasoli98/expert-deferral-under-shift"
+license: MIT
+date-released: 2026-11-24

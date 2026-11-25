@@ -1,0 +1,96 @@
+{
+ "environment": {
+  "python": "3.13.7",
+  "torch": "2.15.0",
+  "device": "mps",
+  "machine": "arm64",
+  "platform": "Darwin"
+ },
+ "files": {
+  "bloodmnist": {
+   "url": "https://zenodo.org/records/10519652/files/bloodmnist.npz",
+   "bytes": 35461855,
+   "sha256": "062023e186f537e26b3c21ea3b2614ddfc475e8a14825dfd20663bbb7e37bddc",
+   "train_images": [
+    11959,
+    28,
+    28,
+    3
+   ],
+   "val_images": [
+    1712,
+    28,
+    28,
+    3
+   ],
+   "test_images": [
+    3421,
+    28,
+    28,
+    3
+   ],
+   "classes": {
+    "train_labels": 8
+   }
+  },
+  "dermamnist": {
+   "url": "https://zenodo.org/records/10519652/files/dermamnist.npz",
+   "bytes": 19725078,
+   "sha256": "1a309fec2e33bb6aba88e7d078e5ccbb9736c84a0b415ac197eb3c8fa331e050",
+   "train_images": [
+    7007,
+    28,
+    28,
+    3
+   ],
+   "val_images": [
+    1003,
+    28,
+    28,
+    3
+   ],
+   "test_images": [
+    2005,
+    28,
+    28,
+    3
+   ],
+   "classes": {
+    "train_labels": 7
+   }
+  },
+  "organamnist": {
+   "url": "https://zenodo.org/records/10519652/files/organamnist.npz",
+   "bytes": 38247708,
+   "sha256": "7c8c8b0753e2c0d7f70928817eac02be7cbb09f6beff4346e9d0ea79ecb598bd",
+   "train_images": [
+    34561,
+    28,
+    28
+   ],
+   "val_images": [
+    6491,
+    28,
+    28
+   ],
+   "test_images": [
+    17778,
+    28,
+    28
+   ],
+   "classes": {
+    "train_labels": 11
+   }
+  }
+ },
+ "bloodmnist_train_class_counts": [
+  852,
+  2181,
+  1085,
+  2026,
+  849,
+  993,
+  2330,
+  1643
+ ]
+}

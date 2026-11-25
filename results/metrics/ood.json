@@ -1,0 +1,889 @@
+{
+ "config": {
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "ensemble_size": 5,
+  "epochs": 20,
+  "batch_size": 128,
+  "lr": 0.002,
+  "weight_decay": 0.0005,
+  "mc_dropout_samples": 30,
+  "laplace_samples": 200,
+  "laplace_prior_grid": [
+   0.01,
+   0.1,
+   1.0,
+   10.0,
+   100.0,
+   1000.0
+  ],
+  "ece_bins": 15,
+  "severities": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "corruptions": [
+   "gaussian_noise",
+   "gaussian_blur",
+   "brightness",
+   "contrast",
+   "pixelate"
+  ],
+  "ood_sets": [
+   "dermamnist",
+   "organamnist",
+   "noise"
+  ],
+  "budgets": [
+   0.0,
+   0.05,
+   0.1,
+   0.2,
+   0.3,
+   0.5
+  ],
+  "expert_reliability": [
+   0.8,
+   0.9,
+   0.95,
+   1.0
+  ],
+  "streams": [
+   "clean",
+   "shift_s3",
+   "shift_s5"
+  ],
+  "data_urls": {
+   "bloodmnist": "https://zenodo.org/records/10519652/files/bloodmnist.npz",
+   "dermamnist": "https://zenodo.org/records/10519652/files/dermamnist.npz",
+   "organamnist": "https://zenodo.org/records/10519652/files/organamnist.npz"
+  }
+ },
+ "records": [
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.155645233598261
+  },
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.2707208156166147
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.15376495913096533
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.21702168140012437
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.2510057070127954
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.2811043860678616
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.2758063916502226
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.27303810045188115
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.3655539607572708
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.3171358362351939
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.5008573275959473
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.5066511592984798
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.5929142358952079
+  },
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.6999719137630337
+  },
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.6968199663665816
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.6940912350689864
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.6984836508109162
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9326657461809083
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9267396954399214
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9869186663762627
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9181027717023003
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9225417984642034
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9743196777713115
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9731967409711549
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9600477337858804
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9985082764680314
+  },
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.18054477387930404
+  },
+  {
+   "seed": 0,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.24278035460433567
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.17910995766044635
+  },
+  {
+   "seed": 0,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.20500402409896543
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.36675293621655747
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.3718636572552851
+  },
+  {
+   "seed": 0,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.40253409290640085
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.3202589778335762
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.3545813078616428
+  },
+  {
+   "seed": 0,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.3532823514443563
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.5961770760766184
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.5932771528844019
+  },
+  {
+   "seed": 0,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.7092281531244208
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.1793948335825155
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.28907408473846075
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.1764464897388216
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.2148138131724183
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.2799161115043435
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.3045981217666153
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.3147293998269453
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.28552690183340246
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.3672132880310186
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.31982962791792807
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.4255717035968979
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.43842235976851207
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.5019187634538326
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.4594622122196749
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.4800882080442503
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.4513384796570454
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.45876889999958126
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.8698504115227567
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.8728352684525594
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9575479988833863
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.916595838708269
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9219426054714245
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9805219767754932
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9144103757241263
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.908528458057046
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9878783150752857
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.0648048690102169
+  },
+  {
+   "seed": 1,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.19041101520510428
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.06387974066329147
+  },
+  {
+   "seed": 1,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.09377923602530273
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.2021679293795625
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.21346112585394078
+  },
+  {
+   "seed": 1,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.2275096701845241
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.7221450023971991
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.7250436011699666
+  },
+  {
+   "seed": 1,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.8044759567029338
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.47464116991182187
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.4756776776621109
+  },
+  {
+   "seed": 1,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.5888718774568515
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.11945013234233912
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.24236507532688303
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.11842434253448517
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.19730897835796357
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.17271334962797624
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.21457296542333149
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.19635222088012938
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.25478732283585104
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.3468924152640906
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.29321711797676225
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "entropy",
+   "auroc": 0.37046568028919225
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "max_prob",
+   "auroc": 0.3803871642145732
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "dermamnist",
+   "score": "mutual_info",
+   "auroc": 0.4574663166695946
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.6739531382802422
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.6679203649655682
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.6699698827017233
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.6723439686493683
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9142899817238661
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9106080956548703
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.979892236688965
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.8968026891012497
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9052618415702113
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.9620606804559523
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "entropy",
+   "auroc": 0.9614995965647465
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "max_prob",
+   "auroc": 0.9474686541958762
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "organamnist",
+   "score": "mutual_info",
+   "auroc": 0.995305317561178
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.3035891510736214
+  },
+  {
+   "seed": 2,
+   "method": "softmax",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.315639573687323
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.30278065708464863
+  },
+  {
+   "seed": 2,
+   "method": "temp_scaling",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.30528897935195903
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.5073148540647843
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.5058854209701398
+  },
+  {
+   "seed": 2,
+   "method": "mc_dropout",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.5633443334201185
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.3691339006006969
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.36385459378303847
+  },
+  {
+   "seed": 2,
+   "method": "ensemble",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.3966044534159384
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "entropy",
+   "auroc": 0.6729676847635624
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "max_prob",
+   "auroc": 0.6673840178118181
+  },
+  {
+   "seed": 2,
+   "method": "laplace",
+   "ood": "noise",
+   "score": "mutual_info",
+   "auroc": 0.8082487577586415
+  }
+ ]
+}
